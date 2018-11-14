@@ -21,7 +21,7 @@
         console.log(e.data);
         console.log(destination);
         let receiveMessage = destination.document.querySelector('.receive-message')
-        receiveMessage.textContent = e.data;
+        receiveMessage.textContent = JSON.parse(e.data);
     }, false);
 })();
 
