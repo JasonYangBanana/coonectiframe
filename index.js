@@ -4,7 +4,7 @@
     let source = document.querySelector('#source');
     let destination = document.getElementById('destination').contentWindow;
     function getValue() {
-        let data = JSON.stringify(this.value);
+        let data = this.value;
         console.log(data);
         destination.postMessage(data, "*");
     }
