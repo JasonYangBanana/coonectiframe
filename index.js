@@ -8,14 +8,16 @@
         destination.postMessage(data, '*');
     }
     source.addEventListener('input', getValue);
+
+    let eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+    let eventer = window[eventMethod];
+    let messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+
+    // Listen to message from child window
+    eventer(messageEvent, function (e) {
+        console.log(destination.document)
+        // let receiveMessage = destination.querySelector('.receive-message')
+        // receiveMessage.textContent = e.data;
+    }, false);
 })();
 
-let eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-let eventer = window[eventMethod];
-let messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
-
-// Listen to message from child window
-eventer(messageEvent, function (e) {
-    let receiveMessage = destination.querySelector('.receive-message')
-    receiveMessage.textContent = e.data;
-}, false);
