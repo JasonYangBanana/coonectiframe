@@ -20,7 +20,7 @@
         console.log(e);
         console.log(e.data);
         console.log(destination);
-        let receiveMessage = destination.contentWindow.document.querySelector('.receive-message')
+        let receiveMessage = destination.document.querySelector('.receive-message')
         receiveMessage.textContent = e.data;
     }, false);
 })();
