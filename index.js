@@ -20,8 +20,10 @@
         console.log(e);
         console.log(e.data);
         console.log(destination);
+        console.log(destination.document);
+        console.log(destination.document.querySelector('.receive-message'))
         let receiveMessage = destination.document.querySelector('.receive-message')
-        receiveMessage.textContent = JSON.parse(e.data);
+        receiveMessage.textContent = e.data;
     }, false);
 })();
 
