@@ -1,8 +1,8 @@
 
 //取得textarea的改變
 (function () {
-    let source = document.querySelector('#source');
-    let destination = document.getElementById('destination').contentWindow;
+    var source = document.querySelector('#source');
+    var destination = document.getElementById('destination').contentWindow;
     function getValue() {
         let data = this.value;
         console.log(data);
@@ -22,7 +22,7 @@
         console.log(destination);
         console.log(destination.document);
         console.log(destination.document.querySelector('.receive-message'))
-        let receiveMessage = destination.document.querySelector('.receive-message')
+        var receiveMessage = destination.document.querySelector('.receive-message')
         receiveMessage.textContent = e.data;
     }, false);
 })();
