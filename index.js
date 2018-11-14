@@ -15,8 +15,8 @@
 
     
     eventer(messageEvent, function (e) {
-        console.log(destination.document.querySelector('receive-message'));
-        console.log(e)
+        // console.log(destination.document.querySelector('receive-message'));
+        console.log(e.data);
         // console.log(e.data)
         // let receiveMessage = destination.querySelector('.receive-message')
         // receiveMessage.textContent = e.data;
