@@ -12,7 +12,7 @@
 
     let eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
     let eventer = window[eventMethod];
-    let messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+    // let messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
     
     eventer('message', function (e) {
@@ -23,7 +23,7 @@
         console.log(destination.document);
         console.log(destination.document.querySelector('.receive-message'))
         let receiveMessage = destination.document.querySelector('.receive-message')
-        receiveMessage.innerHTML = e.data;
+        receiveMessage.textContent = e.data;
     }, false);
 })();
 
