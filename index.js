@@ -16,14 +16,13 @@
 
     
     window.addEventListener('message', function (e) {
-        // console.log(destination.document.querySelector('receive-message'));
         console.log(e);
         console.log(e.data);
         console.log(destination);
         console.log(destination.document);
         console.log(destination.document.querySelector('.receive-message'))
         var receiveMessage = destination.document.querySelector('.receive-message')
-        receiveMessage.textContent = e.data;
+        console.log(receiveMessage.textContent);
     }, false);
 })();
 
