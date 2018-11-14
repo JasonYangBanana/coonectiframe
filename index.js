@@ -1,10 +1,10 @@
 
 //取得textarea的改變
 (function () {
-    var source = document.querySelector('#source');
+    let source = document.querySelector('#source');
+    let destination = document.getElementById('destination').contentWindow;
     function getValue() {
-        var data = this.value;
-        var destination = document.getElementById('destination').contentWindow;
+        let data = this.value;
         console.log(data);
         destination.postMessage(data, "*");
     }
@@ -16,13 +16,14 @@
 
     
     window.addEventListener('message', function (e) {
+        // console.log(destination.document.querySelector('receive-message'));
         console.log(e);
         console.log(e.data);
         console.log(destination);
         console.log(destination.document);
         console.log(destination.document.querySelector('.receive-message'))
-        var receiveMessage = destination.document.querySelector('.receive-message')
-        console.log(receiveMessage.textContent);
+        let receiveMessage = destination.document.querySelector('.receive-message')
+        receiveMessage.textContent = e.data;
     }, false);
 })();
 
