@@ -2,13 +2,14 @@
 //取得textarea的改變
 (function () {
     let source = document.querySelector('#source');
-    let destination = document.getElementById('destination').contentWindow;
+    
     function getValue() {
         let data = this.value;
+        let destination = document.getElementById('destination').contentWindow;
         console.log(data);
-        destination.postMessage(data, '*');
+        destination.postMessage(data, "*");
     }
-    source.addEventListener('input', getValue);
+    source.addEventListener('keyup', getValue);
 
     let eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
     let eventer = window[eventMethod];
