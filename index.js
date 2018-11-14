@@ -11,11 +11,12 @@
 
     let eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
     let eventer = window[eventMethod];
-    let messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+    let messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
-    // Listen to message from child window
+    
     eventer(messageEvent, function (e) {
         console.log(destination.document)
+        // console.log(e.data)
         // let receiveMessage = destination.querySelector('.receive-message')
         // receiveMessage.textContent = e.data;
     }, false);
