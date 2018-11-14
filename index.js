@@ -15,7 +15,7 @@
     let messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
     
-    eventer(messageEvent, function (e) {
+    eventer('message', function (e) {
         // console.log(destination.document.querySelector('receive-message'));
         console.log(e);
         console.log(e.data);
