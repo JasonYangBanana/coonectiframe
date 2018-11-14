@@ -10,12 +10,12 @@
     }
     source.addEventListener('keyup', getValue);
 
-    let eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-    let eventer = window[eventMethod];
+    // let eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+    // let eventer = window[eventMethod];
     // let messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
     
-    eventer('message', function (e) {
+    window.addEventListener('message', function (e) {
         // console.log(destination.document.querySelector('receive-message'));
         console.log(e);
         console.log(e.data);
