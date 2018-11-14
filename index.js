@@ -23,7 +23,7 @@
         console.log(destination.document);
         console.log(destination.document.querySelector('.receive-message'))
         let receiveMessage = destination.document.querySelector('.receive-message')
-        receiveMessage.text = e.data;
+        receiveMessage.innerHTML = e.data;
     }, false);
 })();
 
