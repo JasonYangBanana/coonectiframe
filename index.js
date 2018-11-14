@@ -4,7 +4,7 @@
     let source = document.querySelector('#source');
     
     function getValue() {
-        let data = this.value;
+        let data = JSON.stringify(this.value);
         let destination = document.getElementById('destination').contentWindow;
         console.log(data);
         destination.postMessage(data, "*");
@@ -20,9 +20,8 @@
         // console.log(destination.document.querySelector('receive-message'));
         console.log(e);
         console.log(e.data);
-        // console.log(e.data)
-        // let receiveMessage = destination.querySelector('.receive-message')
-        // receiveMessage.textContent = e.data;
+        let receiveMessage = destination.querySelector('.receive-message')
+        receiveMessage.textContent = e.data;
     }, false);
 })();
 
