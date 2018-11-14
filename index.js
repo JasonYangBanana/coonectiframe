@@ -16,6 +16,6 @@ let messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
 
 // Listen to message from child window
 eventer(messageEvent, function (e) {
-    // e.origin , check the message origin
-    console.log('parent received message!:  ', e.data);
+    let receiveMessage = document.querySelector('.receive-message')
+    receiveMessage.textContent = e.data;
 }, false);
