@@ -2,9 +2,9 @@
 //取得textarea的改變
 (function () {
     var source = document.querySelector('#source');
-    var destination = document.getElementById('destination').contentWindow;
     function getValue() {
-        let data = this.value;
+        var data = this.value;
+        var destination = document.getElementById('destination').contentWindow;
         console.log(data);
         destination.postMessage(data, "*");
     }
