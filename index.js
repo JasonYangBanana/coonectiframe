@@ -19,13 +19,13 @@
         // console.log(destination.document.querySelector('receive-message'));
         console.log(e);
         console.log(e.data);
-        console.log(e.data.value);
+        console.log(e.data.js);
         // console.log(e.source.postMessage())
         console.log(destination);
         console.log(destination.document);
         console.log(destination.document.querySelector('.receive-message'))
         let receiveMessage = destination.document.querySelector('.receive-message')
-        receiveMessage.textContent = e.data.value;
+        receiveMessage.textContent = e.data;
     }, false);
 })();
 
